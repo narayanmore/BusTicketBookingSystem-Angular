@@ -1,0 +1,47 @@
+<!-- create-booking.component.html -->
+
+<div class="container">
+  <h2>Create Booking</h2>
+  
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="userId">User ID</label>
+      <input type="text" class="form-control" id="userId" name="userId" [(ngModel)]="bookingModel.userId" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="scheduleId">Schedule ID</label>
+      <input type="text" class="form-control" id="scheduleId" name="scheduleId" [(ngModel)]="bookingModel.scheduleId" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="seatNumbers">Seat Numbers</label>
+      <input type="text" class="form-control" id="seatNumbers" name="seatNumbers" [(ngModel)]="bookingModel.seatNumbers" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="bookingDate">Booking Date</label>
+      <input type="date" class="form-control" id="bookingDate" name="bookingDate" [(ngModel)]="bookingModel.bookingDate" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="totalFare">Total Fare</label>
+      <input type="text" class="form-control" id="totalFare" name="totalFare" [(ngModel)]="bookingModel.totalFare" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="status">Status</label>
+      <input type="text" class="form-control" id="status" name="status" [(ngModel)]="bookingModel.status" required>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+  <div *ngIf="successMessage" class="alert alert-success mt-3">
+    {{ successMessage }}
+  </div>
+
+  <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+    {{ errorMessage }}
+  </div>
+</div>

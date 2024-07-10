@@ -1,0 +1,51 @@
+<!-- src/app/shared/navbar/navbar.component.html -->
+<nav>
+    <ul>
+      <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropbtn">Register</a>
+        <div class="dropdown-content">
+          <a routerLink="/admin/register" routerLinkActive="active">Admin Register</a>
+          <a routerLink="/user/register" routerLinkActive="active">User Register</a>
+        </div>
+      </li>
+      <li class="dropdown" *ngIf="!authService.isLoggedIn()">
+        <a href="#" class="dropbtn">Login</a>
+        <div class="dropdown-content">
+          <a routerLink="/admin/login" routerLinkActive="active">Admin Login</a>
+          <a routerLink="/bus-operator/login" routerLinkActive="active">Bus Operator</a>
+          <a routerLink="/user/login" routerLinkActive="active">User Login</a>
+        </div>
+      </li>
+
+      <li class="dropdown" *ngIf="!authService.isLoggedIn()">
+        <a href="#" class="dropbtn">Ticket</a>
+        <div class="dropdown-content">
+          <a routerLink="/user/create-booking" routerLinkActive="active">Book Ticket</a>
+          <a routerLink="/admin/login" routerLinkActive="active">Cancel Ticket</a>
+          <a routerLink="/bus-operator/create-schedule" routerLinkActive="active">Bus Schedule</a>
+        </div>
+      </li>
+
+      <li class="dropdown" *ngIf="authService.isLoggedIn()">
+        <a href="#" class="dropbtn">User Profile</a>
+        <div class="dropdown-content">
+          <a routerLink="/user/profile-update" routerLinkActive="active">User Profile Update</a>
+          <a routerLink="/user/create-booking" routerLinkActive="active">Create Booking</a>
+          <a routerLink="/user/create-order" routerLinkActive="active">Create Order</a>
+          <a routerLink="/user/booking-details" routerLinkActive="active">Booking Details</a>
+          <a routerLink="/user/bus-search" routerLinkActive="active">Bus Search</a>
+        </div>
+      </li>
+
+      <li class="dropdown" *ngIf="!authService.isLoggedIn()">
+        <a href="#" class="dropbtn">Search Bus</a>
+        <div class="dropdown-content">
+          <a routerLink="/user/bus-search" routerLinkActive="active">Search Bus</a>
+        </div>
+      </li>
+
+      <li *ngIf="authService.isLoggedIn()"><a (click)="logout()">Logout</a></li>
+    </ul>
+  </nav>
+  

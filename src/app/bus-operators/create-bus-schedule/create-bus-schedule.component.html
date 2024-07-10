@@ -1,0 +1,39 @@
+<div class="container">
+    <h2>Create Bus Schedule</h2>
+    <form [formGroup]="busScheduleForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="busName">Bus Name:</label>
+        <input type="text" id="busName" class="form-control" formControlName="busName" placeholder="Enter Bus Name">
+      </div>
+      <div class="form-group">
+        <label for="busNumber">Bus Number:</label>
+        <input type="number" id="busNumber" class="form-control" formControlName="busNumber" placeholder="Enter Bus Number">
+      </div>
+      <div class="form-group">
+        <label for="busType">Bus Type:</label>
+        <input type="text" id="busType" class="form-control" formControlName="busType" placeholder="Enter Bus Type">
+      </div>
+      <div class="form-group">
+        <label for="numofSeats">Number of Seats:</label>
+        <input type="number" id="numofSeats" class="form-control" formControlName="numofSeats" placeholder="Enter Number of Seats">
+      </div>
+      <div class="form-group">
+        <label for="origin">Origin:</label>
+        <input type="text" id="origin" class="form-control" formControlName="origin" placeholder="Enter Origin">
+      </div>
+      <div class="form-group">
+        <label for="destination">Destination:</label>
+        <input type="text" id="destination" class="form-control" formControlName="destination" placeholder="Enter Destination">
+      </div>
+      <div class="form-group">
+        <label for="timings">Timings:</label>
+        <input type="text" id="timings" class="form-control" formControlName="timings" placeholder="Enter Timings">
+      </div>
+      <div class="form-group">
+        <label for="fare">Fare:</label>
+        <input type="number" id="fare" class="form-control" formControlName="fare" placeholder="Enter Fare">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+  
